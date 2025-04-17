@@ -44,7 +44,7 @@
     "href": "results.html#second-results",
     "title": "3  Results",
     "section": "3.2 second results",
-    "text": "3.2 second results\n\n\nCode\nlibrary(ggplot2)\nggplot(iris, aes(Sepal.Length))",
+    "text": "3.2 second results\n\n\nCode\nlibrary(ggplot2)\nggplot(iris, aes(Sepal.Length, Sepal.Width))+\n  geom_point()",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Results</span>"
     ]
