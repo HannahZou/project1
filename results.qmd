@@ -12,6 +12,6 @@ ggplot(iris, aes(Sepal.Length, Sepal.Width))+
 ```{r}
 library(ggplot2)
 ggplot(mtcars, aes(y = wt, x = mpg))+
-  geom_point()
+  geom_point() ## new
 ```
 
