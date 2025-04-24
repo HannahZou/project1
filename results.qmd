@@ -9,9 +9,10 @@ ggplot(iris, aes(Sepal.Length, Sepal.Width))+
   geom_point()+
   geom_line()
 ```
+
 ```{r}
 library(ggplot2)
 ggplot(mtcars, aes(y = wt, x = mpg))+
-  geom_point()
+  geom_point() ## This is a new st
 ```
 
