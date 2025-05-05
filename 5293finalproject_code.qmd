@@ -1,5 +1,5 @@
 ---
-title: "stat5293_final_project_yz4821"
+title: "5293_final_project"
 format: html
 editor: visual
 ---
