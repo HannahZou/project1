@@ -9,7 +9,7 @@ execute:
   message: false
 
 book:
-  title: "Bank Marketing"
+  title: "Interpretable Model Meets Local Explanation: A Comparison of LIME and Random Forest in Edibility Prediction Based on Bank Marketing Data"
   author:
     - Yanhang Zou (yz4821)
   repo-url: https://github.com/HannahZou/project1.git
