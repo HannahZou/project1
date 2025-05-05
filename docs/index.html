@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Yanhang (yz4821)">
-<meta name="author" content="AUTHOR2 (UNI2)">
-<meta name="dcterms.date" content="2025-04-17">
+<meta name="author" content="Yanhang Zou (yz4821)">
+<meta name="dcterms.date" content="2025-05-05">
 
 <title>IRIS</title>
 <style>
@@ -125,20 +124,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Results</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./d3graph.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Interactive graph</span></span></a>
+  <a href="./5293_projcode.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">5293 Project</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./conclusion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Conclusion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conclusion</span></span></a>
   </div>
 </li>
     </ul>
@@ -168,17 +161,16 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     <div>
-    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Yanhang (yz4821) </p>
-             <p>AUTHOR2 (UNI2) </p>
+             <p>Yanhang Zou (yz4821) </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 17, 2025</p>
+      <p class="date">May 5, 2025</p>
     </div>
   </div>
   
@@ -192,6 +184,11 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="introduction" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<p>Machine learning is increasingly being integrated across diverse domains to enhance data-driven decision-making. In many cases, complex black-box models are preferred because they are believed to offer better predictive performance. In contrast, interpretable models are frequently overlooked or undervalued, as they are commonly associated with reduced accuracy, despite their potential to offer transparent and trustworthy insights.</p>
+<p>Interpretability helps build user trust, supports regulatory requirements, and makes model results easier to act on. To make complex models more understandable, post-hoc explanation tools like LIME (Local Interpretable Model-Agnostic Explanations) and SHAP (SHapley Additive Explanations) are widely used. These methods help explain predictions from black-box models like Random Forests.</p>
+<p>However, a major concern is how reliable these explanation methods are. Both LIME and SHAP use random processes—LIME relies on local sampling and perturbations, while SHAP uses Monte Carlo simulations to estimate Shapley values. This means their explanations can vary depending on random seed settings and parameter values (e.g., number of permutations or simulations). For those who are aiming to obtain consistent and reliable model explanations, it becomes essential to evaluate the sensitivity of interpretability methods to variations in factors such as data sampling, model parameters, or random seeds. Such assessments would help to ensure that the insights derived from these explanations remain stable and trustworthy across different conditions.</p>
+<p>This study investigates how stable the explanations from LIME and SHAP are when explaining a single prediction made by a Random Forest classifier. We examine whether these methods consistently identify the same top features. Furthermore, we compare these locally identified features with the global feature importance rankings derived directly from the Random Forest model, aiming to understand the alignment between local and global interpretability perspectives.</p>
+<p>Using the Bank Marketing dataset from the UCI Machine Learning Repository, we perform a controlled analysis over multiple runs. We test how different settings affect the results and assess the agreement between local and global explanations. These early findings provide a foundation for larger studies involving more predictions, models, or datasets.</p>
 
 
 </section>

@@ -4,12 +4,14 @@ project:
 
 execute:
   echo: true
+  eval: true
+  warning: false
+  message: false
 
 book:
-  title: "IRIS"
+  title: "Bank Marketing"
   author:
-    - Yanhang (yz4821)
-    - AUTHOR2 (UNI2)
+    - Yanhang Zou (yz4821)
   repo-url: https://github.com/HannahZou/hannah-inclass.git
   date: today
   page-footer:
@@ -19,8 +21,7 @@ book:
   chapters:
     - index.qmd
     - data.qmd
-    - results.qmd
-    - d3graph.qmd
+    - 5293_projcode.qmd
     - conclusion.qmd
 
 format:
