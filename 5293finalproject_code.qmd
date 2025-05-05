@@ -15,7 +15,6 @@ library(fastshap)
 library(ggplot2)
 library(Matrix)
 library(vip)
-
 ```
 
 # 1. Load and Preprocess Data
@@ -179,17 +178,34 @@ ggplot(shap_df[1:5, ], aes(x = reorder(feature, shap_value), y = shap_value)) +
 # 9. LIME Explanation
 
 ```{r}
-explainer_lime <- lime(train_X, rf_model)
+library(lime)
+# Tell lime how to handle randomForest models
+model_type.randomForest <- function(x, ...) {
+  return("classification")
+}
 
+predict_model.randomForest <- function(x, newdata, type, ...) {
+  data.frame(predict(x, newdata = newdata, type = "prob"))
+}
+
+# Ensure input is a data.frame
+train_X_df <- as.data.frame(train_X)
+test_X_df <- as.data.frame(test_X)
+
+# Create explainer
+explainer_lime <- lime(train_X_df, rf_model)
+
+# Explain one test instance
 set.seed(123)
 lime_result <- lime::explain(
-  x = test_X[3, , drop = FALSE],
+  x = test_X_df[3, , drop = FALSE],
   explainer = explainer_lime,
   n_labels = 1,
   n_features = 5,
   n_permutations = 1000
 )
 
+# Plot explanation
 plot_features(lime_result) + ggtitle("LIME Explanation (Row 3)")
 
 ```
@@ -241,6 +257,7 @@ cat("Jaccard Similarity (SHAP vs RF):", jaccard(top_shap, top_rf), "\n")
 # 11. LIME Stability Over Seeds
 
 ```{r}
+library(lime)
 # Function to extract top 5 LIME features with different seeds
 get_lime_top_features <- function(seed_val) {
   set.seed(seed_val)
