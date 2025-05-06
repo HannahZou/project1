@@ -1,5 +1,8 @@
 # Data
 
+## Data Information
+The data is related with direct marketing campaigns of a Portuguese banking institution. The marketing campaigns were based on phone calls. Often, more than one contact to the same client was required, in order to access if the product (bank term deposit) would be ('yes') or not ('no') subscribed. 
+The classification goal is to predict if the client will subscribe (yes/no) a term deposit (variable y).
 
 ```{r}
 # Load the dataset
@@ -17,6 +20,8 @@ df <- df[, valid_cols]
 df$y <- as.factor(df$y)
 ```
 
+## Description
+
 The dataset includes 45,211 observations and 17 predictor variables, encompassing both categorical and numeric features such as:
 
 -   Client Attributes: age, job, marital, education
@@ -27,6 +32,3 @@ The dataset includes 45,211 observations and 17 predictor variables, encompassin
 The target variable, y, is binary and indicates whether the client subscribed to a term deposit (yes or no). First, we imported the dataset by `ucimlrepo` R package. Then, all categorical variables were converted to factors for compatibility with the randomForest, lime, and Fastshap packages. And the high-cardinality categorical features (with more than 20 unique levels) were removed to simplify analysis and reduce sparsity in local surrogate models.
 
 
-## Description
-
-## Missing value analysis

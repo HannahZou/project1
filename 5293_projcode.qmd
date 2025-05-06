@@ -31,14 +31,6 @@ df <- df[, valid_cols]
 df$y <- as.factor(df$y)
 ```
 
-The dataset includes 45,211 observations and 17 predictor variables, encompassing both categorical and numeric features such as:
-
--   Client Attributes: age, job, marital, education
--   Banking Information: default, housing, loan
--   Contact Details: contact, month, day_of_week, duration
--   Campaign Metrics: campaign, pdays, previous, poutcome
-
-The target variable, y, is binary and indicates whether the client subscribed to a term deposit (yes or no). First, we imported the dataset by `ucimlrepo` R package. Then, all categorical variables were converted to factors for compatibility with the randomForest, lime, and Fastshap packages. And the high-cardinality categorical features (with more than 20 unique levels) were removed to simplify analysis and reduce sparsity in local surrogate models.
 
 ## Train/Test Split
 
