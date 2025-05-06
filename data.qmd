@@ -5,6 +5,15 @@ The data is related with direct marketing campaigns of a Portuguese banking inst
 The classification goal is to predict if the client will subscribe (yes/no) a term deposit (variable y).
 
 ```{r}
+library(ucimlrepo)
+library(dplyr)
+library(caret)
+library(randomForest)
+library(lime)
+library(fastshap)
+library(ggplot2)
+library(Matrix)
+library(vip)
 # Load the dataset
 bank <- fetch_ucirepo("Bank Marketing")
 df <- bind_cols(bank$data$features, y = bank$data$targets$y)
@@ -18,6 +27,7 @@ df <- df[, valid_cols]
 
 # Ensure target variable is a factor
 df$y <- as.factor(df$y)
+head(df)
 ```
 
 ## Description
