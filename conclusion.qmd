@@ -1,6 +1,19 @@
 # Conclusion
+
 In this case, we explored how reliable two popular explanation tools—LIME and SHAP—are when used to interpret predictions from a Random Forest model trained on the UCI Bank Marketing dataset. These tools help us understand why a machine learning model makes a certain prediction by showing which features were most important for a specific decision. Our main goal was to test how stable these explanations are. In other words, if we run LIME or SHAP multiple times with different settings or random seeds, do we get the same results each time? If not, it might be risky to trust these tools in important decision-making. We find that SHAP was more stable and consistent. Even with fewer simulations, SHAP often gave us the same top features again and again. It also agreed more closely with what the Random Forest model considered important overall. Besides, LIME was more sensitive to randomness. When we used fewer permutation samples, LIME’s explanations changed noticeably from one run to the next. The more samples we used, the more stable the results became—but they still varied a bit. Despite these differences, both LIME and SHAP repeatedly highlighted the same key features—like duration, poutcome, and month—as important in the predictions. That gives us some confidence in their findings. These results remind us that explanation tools are helpful, but not perfect. Especially in high-stakes areas like healthcare or finance, users should be cautious: explanations can change depending on how they are generated. SHAP appears to be more trustworthy under a wider range of conditions, but both methods have their place depending on the context.
 
 There is some future work which would help to enhance our findings. For example, we can extend the evaluation to additional black-box models, such as gradient boosting machines and neural networks, to examine whether observed stability patterns persist across different algorithmic families. What’s more, we can try other post-hoc explanation approaches (e.g., Anchors, Counterfactual Explanations, or Integrated Gradients) to broaden the comparative landscape. Additionally, we can also investigate customized visualization techniques to better convey the variability and confidence of feature attributions across multiple runs.
 
 In conclusion, this study contributes to a growing body of work aimed at critically evaluating interpretability tools in machine learning. By systematically probing their stability and agreement, we hope to inform best practices and encourage rigorous scrutiny in the deployment of these methods for responsible, transparent AI.
+
+# Reference
+
+1.  Bohanec, M., Robnik-Šikonja, M., & Kljajić Borštnar, M. (2017). Decision-making framework with double-loop learning through interpretable black-box machine learning models. Industrial Management & Data Systems, 117(7), 1389–1406. https://doi.org/10.1108/IMDS-10-2016-0434
+
+2.  Henninger, M., & Strobl, C. (2023). Local interpretation techniques for machine learning methods: Theoretical background, pitfalls and interpretation of LIME and Shapley values. PsyArXiv. November 14. https://doi.org/10.31234/osf.io/xs4ev
+
+3.  Hong, S. R., Hullman, J., & Bertini, E. (2020). Human factors in model interpretability: Industry practices, challenges, and needs. Proceedings of the ACM on Human-Computer Interaction, 4(CSCW1), 1–26. https://doi.org/10.1145/3392826
+
+4.  Li, X., Xiong, H., Li, X., Wu, X., Zhang, X., Liu, J., … & Dou, D. (2022). Interpretable deep learning: Interpretation, interpretability, trustworthiness, and beyond. Knowledge and Information Systems, 64(12), 3197–3234. https://doi.org/10.1007/s10115-022-01691-z
+
+5.  Moro, S., Rita, P., & Cortez, P. (2014). Bank marketing \[Dataset\]. UCI Machine Learning Repository. https://doi.org/10.24432/C5K306
